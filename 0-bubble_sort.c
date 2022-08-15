@@ -4,17 +4,17 @@
 /**
  * swap - swap elements in an array
  *
- * @a - array to swap elements in
- * @i - first element to swap
- * @j - second element to swap
+ * @a:  array to swap elements in
+ * @i: first element to swap
+ * @j: second element to swap
  */
-void swap(int *a, int i, int j)
+void swap(int a[], int i, int j)
 {
 	int temp;
 
 	temp = a[i];
-	array[i] = a[j];
-	array[j] = a[i];
+	a[i] = a[j];
+	a[j] = temp;
 }
 
 /**
@@ -26,21 +26,17 @@ void swap(int *a, int i, int j)
  */
 void bubble_sort(int *array, size_t size)
 {
-	int i, j, temp;
+	int i, j, k, temp;
 
 	for (i = 0; i < size; i++)
 	{
-		if (array[i] > array[i + 1])
+		for (k = 0; k < size - i - 1; k++)
 		{
-			swap(*array, i, i+1);
-
-			for (j = 0; j < size; j++)
+			if (array[k] > array[k + 1])
 			{
-				printf("%d", array[j]);
-				if (j < size)
-					printf(", ");
+				swap(array, k, k + 1);
+				print_array(array, size);
 			}
-			printf("\n");
 		}
 	}
 }
