@@ -1,29 +1,6 @@
 #include "sort.h"
 
 /**
- * listint_len - size of a linked list
- *
- * @list: linked list to work on
- * Return: Length of the linked list
- */
-int listint_len(listint_t *list)
-{
-	listint_t *head = list;
-	int i;
-
-	if (head)
-	{
-		while (head != NULL)
-		{
-			head = head->next;
-			i++;
-		}
-		return (i);
-	}
-	return (0);
-}
-
-/**
  * insertion_sort_list - sorts a doubly linked list of integers in
  * ascending order using the insertion sort algorithm
  *
@@ -59,8 +36,3 @@ void insertion_sort_list(listint_t **list)
 		}
 	}
 }
-/** void swap_listint_t(listint_t **list, listint_t *i)
- *{
- * 	while ()
- *}
- */
