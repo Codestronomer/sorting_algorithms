@@ -31,6 +31,6 @@ void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 
 /* swap function */
-void swap(int a[], int x, int y);
+void swap(int a[], int i, int j);
 
 #endif
