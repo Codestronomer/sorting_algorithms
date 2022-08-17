@@ -20,7 +20,7 @@ void heap_sort(int *array, size_t size)
 	while (i > 0)
 	{
 		heapify(array, size, 0, i);
-		swap(array, i, 0, size);
+		swapm(array, i, 0, size);
 		i--;
 	}
 }
@@ -51,19 +51,19 @@ void heapify(int *array, size_t size, size_t i, size_t root)
 	/* swap array[i] with array[largest] if i is not the largest */
 	if (i != largest)
 	{
-		swap(array, i, largest, size);
+		swapm(array, i, largest, size);
 		heapify(array, size, largest, root);
 	}
 }
 
 /**
- * swap - swap elements of array
+ * swapm - swap elements of array
  * @array: array of integers
  * @a: element a
  * @b: element b
  * @size: size of array
  */
-void swap(int *array, size_t a, size_t b, size_t size)
+void swapm(int *array, size_t a, size_t b, size_t size)
 {
 	int temp;
 
